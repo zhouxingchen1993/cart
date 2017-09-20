@@ -28,4 +28,6 @@ public interface REcCartskuMapper {
     int updateByPrimaryKeySelective(REcCartsku record);
 
     int updateByPrimaryKey(REcCartsku record);
+
+    List<REcCartsku> selectByUserId(int userId);
 }

@@ -27,4 +27,6 @@ public interface REcSkuMapper {
     int updateByPrimaryKeySelective(REcSku record);
 
     int updateByPrimaryKey(REcSku record);
+
+    List<REcSku> getSKUList(List<Integer> nskuidList);
 }

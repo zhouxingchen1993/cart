@@ -272,4 +272,15 @@
       sCurrency = #{scurrency,jdbcType=VARCHAR}
     where nSKUID = #{nskuid,jdbcType=INTEGER}
   </update>
+  <select id="getSKUList" resultMap="BaseResultMap" parameterType="java.util.ArrayList">
+    select
+    <include refid="Base_Column_List" />
+    from r_ec_sku
+    where nSKUID in
+    <foreach collection="list" item="nskuid" index="index"
+             open="(" close=")" separator=",">
+      #{nskuid,jdbcType=INTEGER}
+    </foreach>
+    ORDER BY nSKUID
+  </select>
 </mapper>
