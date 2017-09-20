@@ -351,8 +351,8 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
         Collections.sort(skudtoList, new SortList<SKUDTO>("SkuId",true));
         for (int i = 0; i < skudtoList.size(); i++) {
             if (skudtoList.get(i).getSkuId() != skuList.get(i).getNskuid()
-                    || skudtoList.get(i).getQuantity() > skuList.get(i).getNinventory() && skudtoList.get(i).getQuantity() <= 0
-                    && skudtoList.get(i).getDisplayPrice().compareTo(skuList.get(i).getNdisplayPrice()) != 0) {
+                    || skudtoList.get(i).getQuantity() > skuList.get(i).getNinventory() || skudtoList.get(i).getQuantity() <= 0
+                    || skudtoList.get(i).getDisplayPrice().compareTo(skuList.get(i).getNdisplayPrice()) != 0) {
                 return false;
             }
         }
